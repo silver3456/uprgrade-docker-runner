@@ -2,8 +2,6 @@ version: "3"
 services:
   hub:
     image: selenium/hub:3.14
-    ports:
-      - "4444:4444"
   chrome:
     image: selenium/node-chrome:3.14
     volumes:
@@ -31,6 +29,6 @@ services:
       - HUB_HOST=hub
       - MODULE=loan-application.xml  
     volumes:
-      - ./test-results:/usr/share/upgrade/test-output
+      - ./output/test-results:/usr/share/upgrade/test-output
   
   
